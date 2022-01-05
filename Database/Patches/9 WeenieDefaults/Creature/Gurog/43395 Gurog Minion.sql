@@ -1,7 +1,7 @@
 DELETE FROM `weenie` WHERE `class_Id` = 43395;
 
 INSERT INTO `weenie` (`class_Id`, `class_Name`, `type`, `last_Modified`)
-VALUES (43395, 'ace43395-gurogminion', 10, '2021-11-29 06:19:28') /* Creature */;
+VALUES (43395, 'ace43395-gurogminion', 10, '2022-01-05 01:47:32') /* Creature */;
 
 INSERT INTO `weenie_properties_int` (`object_Id`, `type`, `value`)
 VALUES (43395,   1,         16) /* ItemType - Creature */
@@ -71,7 +71,18 @@ VALUES (43395,   1, 0x02001A2B) /* Setup */
      , (43395,   4, 0x30000000) /* CombatTable */
      , (43395,   8, 0x06002B2E) /* Icon */
      , (43395,  22, 0x340000CD) /* PhysicsEffectTable */
-     , (43395,  35,       2000) /* DeathTreasureType - Loot Tier: 8 */;
+     , (43395,  35,       1000) /* DeathTreasureType - Loot Tier: 7 */;
+
+INSERT INTO `weenie_properties_body_part` (`object_Id`, `key`, `d_Type`, `d_Val`, `d_Var`, `base_Armor`, `armor_Vs_Slash`, `armor_Vs_Pierce`, `armor_Vs_Bludgeon`, `armor_Vs_Cold`, `armor_Vs_Fire`, `armor_Vs_Acid`, `armor_Vs_Electric`, `armor_Vs_Nether`, `b_h`, `h_l_f`, `m_l_f`, `l_l_f`, `h_r_f`, `m_r_f`, `l_r_f`, `h_l_b`, `m_l_b`, `l_l_b`, `h_r_b`, `m_r_b`, `l_r_b`)
+VALUES (43395,  0,  4,  0,    0,  500,  250,  250,  250,  250,  250,  250,  250,    0, 1, 0.33,    0,    0, 0.33,    0,    0, 0.33,    0,    0, 0.33,    0,    0) /* Head */
+     , (43395,  1,  4,  0,    0,  500,  250,  250,  250,  250,  250,  250,  250,    0, 2, 0.44, 0.17,    0, 0.44, 0.17,    0, 0.44, 0.17,    0, 0.44, 0.17,    0) /* Chest */
+     , (43395,  2,  4,  0,    0,  500,  250,  250,  250,  250,  250,  250,  250,    0, 3,    0, 0.17,    0,    0, 0.17,    0,    0, 0.17,    0,    0, 0.17,    0) /* Abdomen */
+     , (43395,  3,  4,  0,    0,  500,  250,  250,  250,  250,  250,  250,  250,    0, 1, 0.23, 0.03,    0, 0.23, 0.03,    0, 0.23, 0.03,    0, 0.23, 0.03,    0) /* UpperArm */
+     , (43395,  4,  4,  0,    0,  500,  250,  250,  250,  250,  250,  250,  250,    0, 2,    0,  0.3,    0,    0,  0.3,    0,    0,  0.3,    0,    0,  0.3,    0) /* LowerArm */
+     , (43395,  5,  4,150,  0.5,  500,  250,  250,  250,  250,  250,  250,  250,    0, 2,    0,  0.2,    0,    0,  0.2,    0,    0,  0.2,    0,    0,  0.2,    0) /* Hand */
+     , (43395,  6,  4,  0,    0,  500,  250,  250,  250,  250,  250,  250,  250,    0, 3,    0, 0.13, 0.18,    0, 0.13, 0.18,    0, 0.13, 0.18,    0, 0.13, 0.18) /* UpperLeg */
+     , (43395,  7,  4,  0,    0,  500,  250,  250,  250,  250,  250,  250,  250,    0, 3,    0,    0,  0.6,    0,    0,  0.6,    0,    0,  0.6,    0,    0,  0.6) /* LowerLeg */
+     , (43395,  8,  4,150,  0.5,  500,  250,  250,  250,  250,  250,  250,  250,    0, 3,    0,    0, 0.22,    0,    0, 0.22,    0,    0, 0.22,    0,    0, 0.22) /* Foot */;
 
 INSERT INTO `weenie_properties_attribute` (`object_Id`, `type`, `init_Level`, `level_From_C_P`, `c_P_Spent`)
 VALUES (43395,   1, 530, 0, 0) /* Strength */
@@ -83,43 +94,32 @@ VALUES (43395,   1, 530, 0, 0) /* Strength */
 
 INSERT INTO `weenie_properties_attribute_2nd` (`object_Id`, `type`, `init_Level`, `level_From_C_P`, `c_P_Spent`, `current_Level`)
 VALUES (43395,   1,  1510, 0, 0, 1750) /* MaxHealth */
-     , (43395,   3,  3420, 0, 0, 3980) /* MaxStamina */
+     , (43395,   3,  3500, 0, 0, 3980) /* MaxStamina */
      , (43395,   5,  1000, 0, 0, 1400) /* MaxMana */;
 
 INSERT INTO `weenie_properties_skill` (`object_Id`, `type`, `level_From_P_P`, `s_a_c`, `p_p`, `init_Level`, `resistance_At_Last_Check`, `last_Used_Time`)
-VALUES (43395,  6, 0, 3, 0, 380, 0, 0) /* MeleeDefense        Specialized */
-     , (43395,  7, 0, 3, 0, 377, 0, 0) /* MissileDefense      Specialized */
-     , (43395, 15, 0, 3, 0, 310, 0, 0) /* MagicDefense        Specialized */
+VALUES (43395,  6, 0, 3, 0, 447, 0, 0) /* MeleeDefense         Specialized */
+     , (43395,  7, 0, 3, 0, 226, 0, 0) /* MissileDefense       Specialized */
+     , (43395, 15, 0, 3, 0, 371, 0, 0) /* MagicDefense         Specialized */
      , (43395, 20, 0, 3, 0, 120, 0, 0) /* Deception           Specialized */
-     , (43395, 33, 0, 3, 0, 260, 0, 0) /* LifeMagic           Specialized */
-     , (43395, 34, 0, 3, 0, 260, 0, 0) /* WarMagic            Specialized */
-     , (43395, 44, 0, 3, 0, 345, 0, 0) /* HeavyWeapons        Specialized */
-     , (43395, 45, 0, 3, 0, 345, 0, 0) /* LightWeapons        Specialized */
-     , (43395, 46, 0, 3, 0, 345, 0, 0) /* FinesseWeapons      Specialized */;
-
-INSERT INTO `weenie_properties_body_part` (`object_Id`, `key`, `d_Type`, `d_Val`, `d_Var`, `base_Armor`, `armor_Vs_Slash`, `armor_Vs_Pierce`, `armor_Vs_Bludgeon`, `armor_Vs_Cold`, `armor_Vs_Fire`, `armor_Vs_Acid`, `armor_Vs_Electric`, `armor_Vs_Nether`, `b_h`, `h_l_f`, `m_l_f`, `l_l_f`, `h_r_f`, `m_r_f`, `l_r_f`, `h_l_b`, `m_l_b`, `l_l_b`, `h_r_b`, `m_r_b`, `l_r_b`)
-VALUES (43395,  0,  4,  0,    0,  500,  525,  650,  500,  650,  500,  525,  600,    0, 1, 0.33,    0,    0, 0.33,    0,    0, 0.33,    0,    0, 0.33,    0,    0) /* Head */
-     , (43395,  1,  4,  0,    0,  500,  525,  650,  500,  650,  500,  525,  600,    0, 2, 0.44, 0.17,    0, 0.44, 0.17,    0, 0.44, 0.17,    0, 0.44, 0.17,    0) /* Chest */
-     , (43395,  2,  4,  0,    0,  500,  525,  650,  500,  650,  500,  525,  600,    0, 3,    0, 0.17,    0,    0, 0.17,    0,    0, 0.17,    0,    0, 0.17,    0) /* Abdomen */
-     , (43395,  3,  4,  0,    0,  500,  525,  650,  500,  650,  500,  525,  600,    0, 1, 0.23, 0.03,    0, 0.23, 0.03,    0, 0.23, 0.03,    0, 0.23, 0.03,    0) /* UpperArm */
-     , (43395,  4,  4,  0,    0,  500,  525,  650,  500,  650,  500,  525,  600,    0, 2,    0,  0.3,    0,    0,  0.3,    0,    0,  0.3,    0,    0,  0.3,    0) /* LowerArm */
-     , (43395,  5,  4, 150,  0.5,  500,  525,  650,  500,  650,  500,  525,  600,    0, 2,    0,  0.2,    0,    0,  0.2,    0,    0,  0.2,    0,    0,  0.2,    0) /* Hand */
-     , (43395,  6,  4,  0,    0,  500,  525,  650,  500,  650,  500,  525,  600,    0, 3,    0, 0.13, 0.18,    0, 0.13, 0.18,    0, 0.13, 0.18,    0, 0.13, 0.18) /* UpperLeg */
-     , (43395,  7,  4,  0,    0,  500,  525,  650,  500,  650,  500,  525,  600,    0, 3,    0,    0,  0.6,    0,    0,  0.6,    0,    0,  0.6,    0,    0,  0.6) /* LowerLeg */
-     , (43395,  8,  4, 150,  0.5,  500,  525,  650,  500,  650,  500,  525,  600,    0, 3,    0,    0, 0.22,    0,    0, 0.22,    0,    0, 0.22,    0,    0, 0.22) /* Foot */;
+     , (43395, 33, 0, 3, 0, 185, 0, 0) /* LifeMagic            Specialized */
+     , (43395, 34, 0, 3, 0, 185, 0, 0) /* WarMagic             Specialized */
+     , (43395, 44, 0, 3, 0, 404, 0, 0) /* HeavyWeapons         Specialized */
+     , (43395, 45, 0, 3, 0, 404, 0, 0) /* LightWeapons         Specialized */
+     , (43395, 46, 0, 3, 0, 457, 0, 0) /* FinesseWeapons       Specialized */;
 
 INSERT INTO `weenie_properties_spell_book` (`object_Id`, `spell`, `probability`)
-VALUES (43395,  4446,   2.02)  /* Incantation of Frost Blast */
-     , (43395,  4447,   2.02)  /* Incantation of Frost Bolt */
-     , (43395,  4477,   2.02)  /* Incantation of Bludgeoning Vulnerability Other */;
+VALUES (43395,  4446,    2.1) /* Incantation of Frost Blast */
+     , (43395,  4447,   2.08) /* Incantation of Frost Bolt */
+     , (43395,  4477,   2.02) /* Incantation of Bludgeoning Vulnerability Other */;
 
 INSERT INTO `weenie_properties_create_list` (`object_Id`, `destination_Type`, `weenie_Class_Id`, `stack_Size`, `palette`, `shade`, `try_To_Bond`)
-VALUES (43395, 9, 48908,  1, 0, 0.02, False) /* Create Shattered Legendary Key (48908) for ContainTreasure */
-     , (43395, 9,     0,  0, 0, 0.98, False) /* Create nothing for ContainTreasure */
+VALUES (43395, 9,     0,  0, 0, 0.98, False) /* Create nothing for ContainTreasure */
      , (43395, 9, 44864,  0, 0, 0.02, False) /* Create Gurog Arm (44864) for ContainTreasure */
      , (43395, 9, 44868,  0, 0, 0.02, False) /* Create Gurog Torso with a Head (44868) for ContainTreasure */
      , (43395, 9, 44870,  0, 0, 0.02, False) /* Create Gurog Leg (44870) for ContainTreasure */
      , (43395, 9,     0,  0, 0, 0.94, False) /* Create nothing for ContainTreasure */
      , (43395, 9, 51370,  1, 0, 0.05, False) /* Create Frozen Fortress Testing Grounds Attunement Shard (Level 180+) (51370) for ContainTreasure */
      , (43395, 9, 51341,  1, 0, 0.05, False) /* Create Frozen Fortress Laboratory Attunement Shard (Level 180+) (51341) for ContainTreasure */
-     , (43395, 9,     0,  0, 0, 0.9, False) /* Create nothing for ContainTreasure */;
+     , (43395, 9,     0,  0, 0,  0.9, False) /* Create nothing for ContainTreasure */;
+
